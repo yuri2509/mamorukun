@@ -90,4 +90,18 @@
     }
   }
 
+  &_description {
+    &_title {
+      color: #bee0cc;
+      font-size: 20px;
+      font-weight: bold;
+      padding-bottom: 30px;
+      letter-spacing: 3px; 
+      @include outline-set;
+    } 
+    &_text {
+      padding-left: 10px;
+      line-height: 27px;
+    }
+  }
 }
