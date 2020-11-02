@@ -1,0 +1,56 @@
+@mixin outline-set {
+  display: inline-block;
+  text-shadow: 
+       5px  5px 7px white,
+      -5px  5px 7px white,
+       5px -5px 7px white,
+      -5px -5px 7px white,
+       5px  0px 7px white,
+       0px  5px 7px white,
+      -5px  0px 7px white,
+       0px -5px 7px white; 
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+.top-bar {
+  height: 50px;
+  width: 100%;
+  background-color: #bee0cc;
+  line-height: 50px;
+  padding:0 50px;
+  display: flex;
+  justify-content: space-between;
+
+  &_title {
+    color: #e99bc1;
+    font-size: 30px;
+    font-weight: bold;
+    float: left;
+    .outline {
+      @include outline-set;
+      letter-spacing: 7px; 
+    }
+  }
+
+  &_menu {
+    color: #e99bc1;
+    font-weight: bold;
+    font-size: 20px;
+    float: left;
+    li {
+      display: inline;
+      margin: 30px;
+    }
+  }
+
+  &_use {
+    color: #e99bc1; 
+    font-size: 20px;
+    font-weight: bold;
+  }
+}
+
