@@ -54,3 +54,23 @@
   }
 }
 
+
+.main-space {
+  height: calc(100% - 50px);
+  width: 100%;
+  background-color: #ecbbb5;
+  color: white;
+  padding: 50px 100px;
+
+  &_how-to { 
+    padding-bottom: 30px;
+    &_title {
+      color: #bee0cc;
+      font-size: 20px;
+      font-weight: bold;
+      padding-bottom: 30px;
+      letter-spacing: 3px; 
+      @include outline-set;
+    }
+  }
+}
