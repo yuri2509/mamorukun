@@ -1,0 +1,136 @@
+@mixin outline-set {
+  display: inline-block;
+  text-shadow: 
+       5px  5px 7px white,
+      -5px  5px 7px white,
+       5px -5px 7px white,
+      -5px -5px 7px white,
+       5px  0px 7px white,
+       0px  5px 7px white,
+      -5px  0px 7px white,
+       0px -5px 7px white; 
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+.top-bar {
+  height: 50px;
+  width: 100%;
+  background-color: #bee0cc;
+  line-height: 50px;
+  padding:0 50px;
+  display: flex;
+  justify-content: space-between;
+
+  &_title {
+    color: #e99bc1;
+    font-size: 30px;
+    font-weight: bold;
+    float: left;
+    .outline {
+      @include outline-set;
+      letter-spacing: 7px; 
+    }
+  }
+
+  &_menu {
+    color: #e99bc1;
+    font-weight: bold;
+    font-size: 20px;
+    float: left;
+    li {
+      display: inline;
+      margin: 30px;
+    }
+  }
+
+  &_use {
+    color: #e99bc1; 
+    font-size: 20px;
+    font-weight: bold;
+  }
+}
+
+
+.main-space {
+  height: calc(100% - 50px);
+  width: 100%;
+  background-color: #ecbbb5;
+  color: white;
+  padding: 50px 100px;
+
+  &_how-to { 
+    padding-bottom: 30px;
+    &_title {
+      color: #bee0cc;
+      font-size: 20px;
+      font-weight: bold;
+      padding-bottom: 30px;
+      letter-spacing: 3px; 
+      @include outline-set;
+    }
+  }
+
+  &_sumple {
+    padding-top: 20px;
+    padding-bottom: 50px;
+    &_title {
+      color: #bee0cc;
+      font-size: 20px;
+      font-weight: bold;
+      padding-bottom: 30px;
+      letter-spacing: 3px; 
+      @include outline-set;
+    }
+    &_voice {
+      padding-left: 10px;
+    }
+  }
+
+  &_description {
+    &_title {
+      color: #bee0cc;
+      font-size: 20px;
+      font-weight: bold;
+      padding-bottom: 30px;
+      letter-spacing: 3px; 
+      @include outline-set;
+    } 
+    &_text {
+      padding-left: 10px;
+      line-height: 27px;
+    }
+  }
+
+  &_contact {
+    padding-top: 50px;
+    &_title{
+      color: #bee0cc;
+      font-size: 20px;
+      font-weight: bold;
+      padding-bottom: 30px;
+      letter-spacing: 3px; 
+      @include outline-set;
+    }
+    &_text {
+      padding-left: 10px;
+      line-height: 27px;
+    }
+  }
+}
+
+.footer {
+  .footer_copyright {
+    height: 50px;
+    width: 100%;
+    line-height: 50px;
+    color: white;
+    background-color: #bee0cc;
+    font-size: small;
+    text-align: center;
+  }
+}
+
