@@ -1,0 +1,65 @@
+%html
+  .delivery-traders
+    .delivery-traders_title
+      宅配業者用
+
+    %ul.delivery-traders_audios
+      %li.delivery-traders_audios_voice
+        「はーい」
+        %br
+        %br
+        = audio_tag('hai.mp3', id: 'test-audio', controls: "controls", controlslist:"nodownload")
+
+      %li.delivery-traders_audios_voice
+        「はい」
+        %br
+        %br
+        = audio_tag('はい.mp3', controls: "controls", controlslist:"nodownload")
+
+      %li.delivery-traders_audios_voice
+        「そうです」
+        %br
+        %br
+        = audio_tag('そうです.mp3', controls: "controls", controlslist:"nodownload")
+
+      %li.delivery-traders_audios_voice
+        「違います」
+        %br
+        %br
+        = audio_tag('違います.mp3', controls: "controls", controlslist:"nodownload")
+
+      %li.delivery-traders_audios_voice
+        (置き配をお願いしたい場合)
+        %br
+        %br
+        「ドアの前に置いていただけますか？」
+        %br
+        %br
+        = audio_tag('ドアの前に置いていただけますか.mp3', controls: "controls", controlslist:"nodownload")
+
+      %li.delivery-traders_audios_voice
+        「ありがとうございます」
+        %br
+        %br
+        = audio_tag('ありがとうございます.mp3', controls: "controls", controlslist:"nodownload")
+
+      %li.delivery-traders_audios_voice
+        「お願いします」
+        %br
+        %br
+        = audio_tag('お願いします.mp3', controls: "controls", controlslist:"nodownload")
+
+      %li.delivery-traders_audios_voice
+        「すみません」
+        %br
+        %br
+        = audio_tag('すみません.mp3', controls: "controls", controlslist:"nodownload")
+
+      %li.delivery-traders_audios_voice
+        (音源だけでは対応できなくなった場合、こちらを再生後ご自身でご対応ください)
+        %br 
+        %br
+        「ちょっとわかんないので代わります。ごめん代わってー」
+        %br
+        %br
+        = audio_tag('ちょっとわかんないので代わります。ごめん代わってー.mp3', controls: "controls", controlslist:"nodownload")
