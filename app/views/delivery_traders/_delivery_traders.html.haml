@@ -2,3 +2,10 @@
   .delivery-traders
     .delivery-traders_title
       宅配業者用
+
+    %ul.delivery-traders_audios
+      %li.delivery-traders_audios_voice
+        「はーい」
+        %br
+        %br
+        = audio_tag('hai.mp3', id: 'test-audio', controls: "controls", controlslist:"nodownload")
