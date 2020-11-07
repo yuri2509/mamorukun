@@ -2,7 +2,7 @@
   .top-bar
     .top-bar_title
       %span.outline
-        まもるくん
+        = link_to  "まもるくん", "/"
 
     %ul.top-bar_menu
       %li
@@ -10,9 +10,8 @@
           = link_to "宅配業者用", "delivery_traders#index"
       %li
         %i.fas.fa-user-alt-slash
-          知らない人用
+          = link_to "知らない人用", "strangers"
 
     .top-bar_use
       %i.fas.fa-chalkboard-teacher
-        使い方
-
+        = link_to "使い方", "/"

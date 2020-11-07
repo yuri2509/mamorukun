@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 
-.delivery-traders {
+.strangers {
   height: calc(100% - 100px);
   width: 100%;
   background-color: #ecbbb5;
@@ -19,9 +19,9 @@
 
   &_audios {
     padding-left: 10px;
-  
+
     &_voice{
       padding-bottom: 30px;
     }  
   }
-}
+} 

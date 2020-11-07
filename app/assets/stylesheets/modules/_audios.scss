@@ -26,13 +26,16 @@
   justify-content: space-between;
 
   &_title {
-    color: #e99bc1;
     font-size: 30px;
     font-weight: bold;
     float: left;
     .outline {
       @include outline-set;
       letter-spacing: 7px; 
+      a {
+        color: #e99bc1;
+        text-decoration: none;
+      }
     }
   }
 
@@ -55,6 +58,10 @@
     color: #e99bc1; 
     font-size: 20px;
     font-weight: bold;
+    a {
+      color: #e99bc1;
+      text-decoration: none;
+    }
   }
 }
 
