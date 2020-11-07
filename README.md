@@ -42,6 +42,6 @@ http://54.168.35.244
 
 
 ## :sparkles:Special thanks!!
-音声の提供いただきました  
+音声の提供をしていただきました  
 ジュン  
 Twitter @JUN_WEB_FREE
