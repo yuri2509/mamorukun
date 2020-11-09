@@ -75,3 +75,4 @@ group :production do
   gem 'unicorn'
 end
 
+gem 'audiojs-rails'
