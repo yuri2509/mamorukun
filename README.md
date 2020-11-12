@@ -6,6 +6,16 @@
 ## :globe_with_meridians: URL
 http://54.168.35.244
 
+## :computer:開発環境
+Rails 5.2.4.4　　
+ruby 　.5.1　　
+Haml　　
+SCSS　　
+capistrano 3.14.1　　
+unicorn 5.7.0　　
+nginx　　
+AWS (EC2)　　
+
 ## :art:デザイン
 ![54 168 35 244_strangers(iPad)](https://user-images.githubusercontent.com/62837444/98439601-4a187700-2136-11eb-94ee-736e4e86764c.png)　　
 
