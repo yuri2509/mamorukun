@@ -106,61 +106,26 @@
   float: right;
 
   &_how-to { 
-    padding-bottom: 30px;
-    &_title {
-      color: #bee0cc;
-      font-size: 20px;
-      font-weight: bold;
-      padding-bottom: 30px;
-      letter-spacing: 3px; 
-      @include outline-set;
-    }
+    @include toppage-set;
   }
 
   &_sumple {
-    padding-top: 20px;
-    padding-bottom: 50px;
-    &_title {
-      color: #bee0cc;
-      font-size: 20px;
-      font-weight: bold;
-      padding-bottom: 30px;
-      letter-spacing: 3px; 
-      @include outline-set;
-    }
-    &_voice {
-      padding-left: 10px;
-    }
+    @include toppage-set;
   }
 
   &_description {
-    &_title {
-      color: #bee0cc;
-      font-size: 20px;
-      font-weight: bold;
-      padding-bottom: 30px;
-      letter-spacing: 3px; 
-      @include outline-set;
-    } 
-    &_text {
-      padding-left: 10px;
-      line-height: 27px;
-    }
+    @include toppage-set;
+  }
+
+  &_login {
+    @include toppage-set;
+  }
+
+  &_information {
+    @include toppage-set;
   }
 
   &_contact {
-    padding-top: 50px;
-    &_title{
-      color: #bee0cc;
-      font-size: 20px;
-      font-weight: bold;
-      padding-bottom: 30px;
-      letter-spacing: 3px; 
-      @include outline-set;
-    }
-    &_text {
-      padding-left: 10px;
-      line-height: 27px;
-    }
+    @include toppage-set;
   }
 }
