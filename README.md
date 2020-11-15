@@ -17,7 +17,7 @@ http://54.168.35.244
 - AWS (EC2)　　
 
 ## :art:デザイン
-![54 168 35 244_strangers(iPad)](https://user-images.githubusercontent.com/62837444/98439601-4a187700-2136-11eb-94ee-736e4e86764c.png)　　
+![localhost_3000_strangers(iPad)](https://user-images.githubusercontent.com/62837444/99184098-005a0d00-2784-11eb-8b3e-ca6fb844a163.png)　　
 
 ## :key:制作背景
 女性の一人暮らし、お子さんのお留守番が不安・・・。  
