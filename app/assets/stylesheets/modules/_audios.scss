@@ -10,6 +10,21 @@
       -5px  0px 7px white,
        0px -5px 7px white; 
 }
+@mixin toppage-set {  
+  padding: 20px 0;  
+  &_title{
+  color: #bee0cc;
+  font-size: 20px;
+  font-weight: bold;
+  padding-bottom: 30px;
+  letter-spacing: 3px; 
+  @include outline-set;
+  }
+  &_text {
+    padding-left: 10px;
+    line-height: 27px;
+  }
+}
 
 * {
   box-sizing: border-box;
@@ -44,7 +59,6 @@
     font-size: 20px;
     float: left;
     position: relative;
-    z-index: 2;
 
     li {
       color: #e99bc1; 
@@ -69,7 +83,6 @@
     transform: translateX(-50%);
     -webkit-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
-    z-index: 1;
   }
   //   &_copyright { 
   //     color: white;
