@@ -58,6 +58,13 @@ http://54.168.35.244
 |------|----|-------|
 |voice|string||
 
+### usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|nickname|string||
+|email|string|presence: true, unique: true|
+|password,|string|presence: true, unique: true|
+
 
 ## :sparkles:Special thanks!!
 音声の提供をしていただきました  
