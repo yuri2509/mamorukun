@@ -6,5 +6,5 @@ class User < ApplicationRecord
 
   validates :nickname, :email, :password, 
             presence: true, 
-            unique: true
+            uniqueness: true
 end
