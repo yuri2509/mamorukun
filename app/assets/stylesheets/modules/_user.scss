@@ -15,5 +15,19 @@
     @include outline-set;
   }  
 
+  .field {
+    padding: 0 10px 5px;
+    #user_nickname,#user_email,#user_password {
+      margin-top: 7px;
+    }
+  }
+  .actions {
+    padding: 0 10px;
+  }
+
+  a {
+    color: white;
+    text-decoration: none;
+    padding: 0 10px;
   }
 }
