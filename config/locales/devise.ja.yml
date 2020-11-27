@@ -11,7 +11,7 @@ ja:
         current_sign_in_ip: 現在のログインIPアドレス
         nickname: ニックネーム
         email: メールアドレス
-        encrypted_password: 暗号化パスワード
+        encrypted_password: パスワード（確認用）
         failed_attempts: 失敗したログイン試行回数
         last_sign_in_at: 最終ログイン時刻
         last_sign_in_ip: 最終ログインIPアドレス
