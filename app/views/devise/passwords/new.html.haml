@@ -1,11 +1,9 @@
 .wrapper
   = render "audios/sidebar"
 
-.login-page
-  .login-page_title
+.forget-password-page
+  .forget-password-page_title
     パスワードをお忘れですか？
-
-  .login-page_format
   = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
     = render "devise/shared/error_messages", resource: resource
     .field

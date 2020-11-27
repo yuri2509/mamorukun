@@ -4,8 +4,6 @@
 .login-page
   .login-page_title
     ログイン
-
-  .login-page_format
   = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
     .field
       = f.label :nickname
