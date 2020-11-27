@@ -1,8 +1,11 @@
-.login-page
-  .login-page_title
-    %h2 ログイン
-    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-      = render "devise/shared/error_messages", resource: resource
+.wrapper
+  = render "audios/sidebar"
+
+.signup-page
+  .signup-page_title
+    新規登録
+  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+    = render "devise/shared/error_messages", resource: resource
     .field
       = f.label :nickname
       %br/
@@ -15,13 +18,13 @@
       = f.label :password
       - if @minimum_password_length
         %em
-          (#{@minimum_password_length} characters minimum)
+          (#{@minimum_password_length}文字以上)
       %br/
       = f.password_field :password, autocomplete: "new-password"
     .field
       = f.label :password_confirmation
       %br/
       = f.password_field :password_confirmation, autocomplete: "new-password"
-      .actions
-        = f.submit "Sign up"
-= render "devise/shared/links"
+    .actions
+      = f.submit "ユーザー登録"
+  = render "devise/shared/links"
