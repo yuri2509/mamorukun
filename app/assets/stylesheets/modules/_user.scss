@@ -15,10 +15,21 @@
     @include outline-set;
   }  
 
+  #error_explanation {
+    padding: 10px;
+    margin: 0 10px 10px;
+    background-color: red;
+  }
+
   .field {
     padding: 0 10px 5px;
+
     #user_nickname,#user_email,#user_password {
       margin: 7px 0;
+    }
+
+    &_with_errors {
+      display: inline;
     }
   }
   .actions {
