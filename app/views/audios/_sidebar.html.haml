@@ -17,13 +17,14 @@
           = link_to "使い方", "/"
 
       %li
-        %i.fas.fa-user-circle
-          - if user_signed_in?
         - if user_signed_in?
           %i.fas.fa-door-open
             = link_to "ログアウト",  destroy_user_session_path, method: :delete
-          - else
+        - else
+          %i.fas.fa-user-circle
             = link_to "ログイン", new_user_session_path
+          %i.far.fa-address-card
+            = link_to "新規登録", new_user_registration_path
 
       %li
         %i.fas.fa-user-check
