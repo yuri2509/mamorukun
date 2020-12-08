@@ -1,12 +1,13 @@
 .notification {
-  .notice {
-    color: white;
-    text-align: center;
-  }
-
-  .alert {
+  .notice,.alert {
     background-color: #bee0cc;
     color: white;
     text-align: center;
   }
+
+  // .alert {
+  //   background-color: #bee0cc;
+  //   color: white;
+  //   text-align: center;
+  // }
 }
