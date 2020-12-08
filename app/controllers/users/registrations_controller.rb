@@ -14,7 +14,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     if @user.save
       redirect_to("/")
     else
-      render("users/sign_up")
+      render :new
     end
   end
   
