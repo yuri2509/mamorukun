@@ -8,4 +8,11 @@ Rails.application.routes.draw do
   resources :delivery_traders
   resources :strangers
   resources :users
+
+  post '/audios/guest_sign_in', to: 'audios#new_guest'
+
+
+  # devise_scope :user do
+  #   post 'users/guest_sign_in', to: 'users/sessions#new_guest'
+  # end
 end
