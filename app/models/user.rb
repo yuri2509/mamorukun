@@ -11,4 +11,11 @@ class User < ApplicationRecord
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :password, :encrypted_password,  presence: true
 
+  def self.guest
+    find_or_create_by!(email: 'guest@example.com') do |user|
+      user.nickname = "guest"
+      user.encrypted_password = SecureRandom.urlsafe_base64
+      user.password = user.encrypted_password
+    end
+  end
 end
