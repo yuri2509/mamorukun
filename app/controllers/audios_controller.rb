@@ -9,6 +9,6 @@ class AudiosController < ApplicationController
       user.password = user.encrypted_password
     end
     sign_in user
-    redirect_to root_path, notice: 'ゲストユーザーとしてログインしました'
+    redirect_to root_path, notice: 'ゲストユーザーとしてログインしました。'
   end
 end
