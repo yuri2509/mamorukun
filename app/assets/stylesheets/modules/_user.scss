@@ -1,4 +1,4 @@
-.login-page, .forget-password-page, .signup-page {
+.login-page, .forget-password-page, .signup-page, .edit-page {
   height: 100vh;
   width: calc(100% - 210px);
   background-color: #ecbbb5;
@@ -34,6 +34,10 @@
   }
   .actions {
     padding: 0 10px;
+  }
+
+  .account-delete {
+    padding: 15px 10px 0;
   }
 
   a {
