@@ -117,6 +117,10 @@
     @include toppage-set;
   }
 
+  &_account-edit {
+    @include toppage-set;
+  }
+
   &_information {
     @include toppage-set;
   }
