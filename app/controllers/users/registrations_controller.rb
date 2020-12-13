@@ -29,6 +29,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def show
   #   @user = current_user
   # end
+
+  protected
+
+  def update_resource(resource, params)
+    resource.update_without_password(params)
+  end
   
   private
 

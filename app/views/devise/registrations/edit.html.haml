@@ -31,11 +31,6 @@
       = f.label :password_confirmation
       %br/
       = f.password_field :password_confirmation, autocomplete: "new-password"
-    .field
-      = f.label :current_password
-      %text <情報を更新する場合は入力してください。>
-      %br/
-      = f.password_field :current_password, autocomplete: "current-password"
     .actions
       = f.submit "更新"
 
