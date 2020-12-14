@@ -12,6 +12,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def create
     @user = User.new(user_params)
     if @user.save
+      bypass_sign_in(@user)
       redirect_to root_path, notice: 'ユーザーを登録しました。'
     else
       render :new
@@ -23,6 +24,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def update
     if current_user.update(user_params)
+      bypass_sign_in(current_user)
       redirect_to root_path, notice: 'ユーザー情報を編集しました。'
     else
       render :edit
