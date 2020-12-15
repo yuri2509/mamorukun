@@ -5,11 +5,11 @@ class User < ApplicationRecord
          :recoverable, :rememberable
   
   validates :nickname, :email,
-            presence: true, 
             uniqueness: true
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-  validates :password, :encrypted_password,  presence: true
+  validates :nickname, :email, :password, :encrypted_password,
+            presence: true, on: :create
 
   def self.guest
     find_or_create_by!(email: 'guest@example.com') do |user|
