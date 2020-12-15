@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
       redirect_to root_path, alert: 'ゲストユーザーの編集・削除はできません。'
     end
   end
-
+  
   protected
 
   def configure_permitted_parameters
