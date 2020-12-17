@@ -4,6 +4,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
   before_action :check_guest, only: %i[update destroy]
+  # before_action :correct_user,   only: %i[edit update]
 
   def new
     @user = User.new
@@ -35,6 +36,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   @user = current_user
   # end
 
+
+
   protected
 
   def update_resource(resource, params)
@@ -42,6 +45,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
   
   private
+  # 正しいユーザーかどうか確認
+  # def correct_user
+  #   @user = User.find(params[:id])
+  #   redirect_to(root_url) unless current_user?(@user)
+  # end
 
   def user_params
     params.require(:user).permit(:nickname, :email, :password,
