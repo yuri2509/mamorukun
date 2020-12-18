@@ -8,9 +8,16 @@ class User < ApplicationRecord
             uniqueness: true
   validates :nickname, :email, :password, :encrypted_password,
             presence: true, on: :create
+  validates :nickname,
+            length: { maximum: 20}
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  validates :email,
+            format: { with: VALID_EMAIL_REGEX }
+  validates :password,
+            length: { minimum: 6, maximum: 20}
   validates :password, confirmation: true
 
-  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+
 
   def self.guest
     find_or_create_by!(email: 'guest@example.com') do |user|
