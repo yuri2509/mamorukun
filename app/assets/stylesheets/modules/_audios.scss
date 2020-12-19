@@ -63,7 +63,8 @@
       color: #e99bc1; 
       font-size: 20px;
       font-weight: bold;
-      margin: 25px 15px;
+      margin: 0px 15px 25px;
+      // margin: 25px 15px;
     
       a {
         color: #e99bc1;
@@ -71,9 +72,9 @@
       }
     }
 
-    .fa-door-open, .fa-address-card, .fa-user-check {
+    .fa-door-open, .fa-address-card, .fa-user-circle {
       font-size: 20px;
-      margin-top: 25px;
+      margin-bottom: 25px;
       font-weight: bold;
     }
   }
