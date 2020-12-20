@@ -14,7 +14,7 @@ class User < ApplicationRecord
   validates :email,
             format: { with: VALID_EMAIL_REGEX }
   validates :password,
-            length: { minimum: 6, maximum: 20}
+            length: { minimum: 6}
   validates :password, confirmation: true
 
   def self.guest
