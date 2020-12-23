@@ -52,18 +52,13 @@ http://54.168.35.244
 
 
 ## :seedling:DB設計
-### audiosテーブル
-|Column|Type|Options|
-|------|----|-------|
-|voice|string||
-
 ### usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|nickname|string||
+|nickname|string|presence: true, unique: true|
 |email|string|presence: true, unique: true|
-|password,|string|presence: true, unique: true|
-
+|password|string|presence: true|
+|encrypted_password|string|presence: true|
 
 ## :sparkles:Special thanks!!
 音声の提供をしていただきました  
