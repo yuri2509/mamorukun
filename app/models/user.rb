@@ -18,7 +18,7 @@ class User < ApplicationRecord
   validates :password, confirmation: true
 
   def self.guest
-    find_or_create_by!(email: 'guest@example.com') do |user|
+    find_or_create_by!(email: GUEST_ACCOUNT::GUEST_EMAIL) do |user|
       user.nickname = "guest"
       user.encrypted_password = SecureRandom.urlsafe_base64
       user.password = user.encrypted_password
