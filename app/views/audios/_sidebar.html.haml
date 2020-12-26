@@ -7,23 +7,30 @@
     %ul.side-bar_menu
       %li
         %i.fas.fa-truck
-          = link_to "宅配業者用", "delivery_traders#index"
+          = link_to "宅配業者用", delivery_traders_path
       %li
         %i.fas.fa-user-alt-slash
-          = link_to "知らない人用", "strangers"
+          = link_to "知らない人用", strangers_path
 
       %li
         %i.fas.fa-chalkboard-teacher
           = link_to "使い方", "/"
 
       %li
-        %i.fas.fa-user-circle
-          = link_to "ログイン(工事中)", "/"
-
-      %li
-        %i.fas.fa-user-check
-          = link_to "ゲストログイン(工事中)", "/"
-
+        - if user_signed_in?
+          %i.fas.fa-star
+            = link_to "アカウント編集", edit_user_registration_path
+          %i.fas.fa-door-open
+            = link_to "ログアウト",  destroy_user_session_path, method: :delete
+          
+        - else
+          %i.fas.fa-user-circle
+            = link_to "ログイン", new_user_session_path
+          %i.far.fa-address-card
+            = link_to "新規登録", new_user_registration_path
+          %i.fas.fa-user-check
+            = link_to "ゲストログイン", users_guest_sign_in_path, method: :post
+        
       %li
         %i.fas.fa-pen-nib
           = link_to "情報交換ページ(工事中)", "/"

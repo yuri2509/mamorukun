@@ -1,0 +1,39 @@
+.wrapper
+  = render "audios/sidebar"
+
+.edit-page
+  .edit-page_title
+    ユーザー情報編集
+  = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+    = render "devise/shared/error_messages", resource: resource
+    .field
+      = f.label :nickname
+      %br/
+      = f.text_field :nickname, autofocus: true, autocomplete: "nickname"
+    .field
+      = f.label :email
+      %br/
+      = f.email_field :email, autofocus: true, autocomplete: "email"
+    - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+      %div
+        Currently waiting confirmation for: #{resource.unconfirmed_email}
+    .field
+      = f.label :password
+      %text <変更する場合のみ入力してください。>
+      %br/
+      = f.password_field :password, autocomplete: "new-password"
+      - if @minimum_password_length
+        %br/
+        %em
+          = @minimum_password_length
+          characters minimum
+    .field
+      = f.label :password_confirmation
+      %br/
+      = f.password_field :password_confirmation, autocomplete: "new-password"
+    .actions
+      = f.submit "更新"
+
+  .account-delete
+    ユーザ削除 #{button_to "削除", registration_path(resource_name), data: { confirm: "ユーザーアカウントを削除します。一度削除すると元に戻すことはできません。本当によろしいですか？" }, method: :delete}
+  = link_to "トップページへ戻る", :back

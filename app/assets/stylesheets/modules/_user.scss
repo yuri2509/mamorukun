@@ -1,0 +1,48 @@
+.login-page, .forget-password-page, .signup-page, .edit-page {
+  height: 100vh;
+  width: calc(100% - 210px);
+  background-color: #ecbbb5;
+  color: white;
+  padding: 30px 100px;
+  float: right;
+
+  &_title {
+    color: #bee0cc;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 30px 0;
+    letter-spacing: 3px; 
+    @include outline-set;
+  }  
+
+  #error_explanation {
+    padding: 10px;
+    margin: 0 10px 10px;
+    background-color: #bee0cc;
+  }
+
+  .field {
+    padding: 0 10px 5px;
+
+    #user_nickname,#user_email,#user_password {
+      margin: 7px 0;
+    }
+
+    &_with_errors {
+      display: inline;
+    }
+  }
+  .actions {
+    padding: 0 10px;
+  }
+
+  .account-delete {
+    padding: 15px 10px 0;
+  }
+
+  a {
+    color: white;
+    text-decoration: none;
+    padding: 0 10px;
+  }
+}
