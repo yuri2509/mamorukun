@@ -1,4 +1,4 @@
-class Information < ApplicationRecord
+class Message < ApplicationRecord
   belongs_to :user
   
   # imageカラムが空の場合、contentカラムも空であれば保存しない

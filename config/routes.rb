@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   root "audios#index"
   resources :delivery_traders
   resources :strangers
-  resources :users
+  resources :users, only: [:new, :create, :edit, :update]
+  resources :messages, only: [:index, :create]
 
   # get 'users/show', to: 'users#show'
 
