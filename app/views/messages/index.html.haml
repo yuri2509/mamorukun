@@ -1,1 +1,25 @@
-情報共有ページ
+.wrapper
+  = render "audios/sidebar"
+  
+.message-page
+  .message-page_title
+    情報交換ページ
+  
+  .message-page_contents
+    .message-page_contents_name
+      testuser
+      .message-page_contents_date
+        2020/01/01(Fry)00:00:00
+    .message-page_contents_text
+      防犯しましょう！
+
+
+  -# ログインしている場合のみ表示すること
+  .message-page_form
+    %form.input-form
+      %input.input-form_text{type: "text", placeholder: "入力してください"}
+      -# 画像投稿
+      -# %label.input-form_icon
+      -#   %i.fas.fa-image
+      -#   %input.input-form_file{type:"file"}
+      %input.input-form-btn{type: "submit", value: "送信"}
