@@ -15,12 +15,22 @@
   } 
 
   &_contents {
-    height: 100px;
-    &_name {
-      height: 30px;
-    }
-    &_date {
-      float: right;
+    padding-left: 10px;
+    margin-bottom: 15px;
+
+    &_info {
+      display: flex;
+
+      &_name {
+        font-weight: bold;
+        font-size: 18px;
+        height: 30px;
+      }
+
+      &_date {
+        font-size: 13px;
+        margin-left: 10px;
+      }
     }
   }
 
