@@ -59,6 +59,18 @@ http://54.168.35.244
 |password|string|presence: true|
 |encrypted_password|string|presence: true|
 
+### Association
+- has_many :messages
+
+### messagesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|content|string|presence: true|
+|user|references|presence: true|
+
+### Association
+- belongs_to :user
+
 ## :sparkles:Special thanks!!
 音声の提供をしていただきました  
 ジュン  
