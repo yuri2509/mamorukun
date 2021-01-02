@@ -26,11 +26,14 @@
 
   -# ログインしている場合のみ表示
   - if user_signed_in?
-    .message-page_form
-      %form.input-form
-        %input.input-form_text{type: "text", placeholder: "入力してください"}
-        -# 画像投稿
-        -# %label.input-form_icon
-        -#   %i.fas.fa-image
-        -#   %input.input-form_file{type:"file"}
-        %input.input-form-btn{type: "submit", value: "送信"}
+    .form
+      = form_for [@message] do |f|
+        .input-form
+          = f.text_field :content, class: 'input-form_text', placeholder: '入力してください'
+          .form_mask
+            = f.label :image, class: 'input-form_icon' do
+              = icon('fas', 'image', class: 'fa-image ')
+              = f.file_field :image, class: 'input-form_file'
+            = f.submit 'Send', class: 'input-form-btn'
+
+
