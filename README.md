@@ -17,8 +17,7 @@ http://54.168.35.244
 - AWS (EC2)　　
 
 ## :art:デザイン
-![localhost_3000_strangers(iPad)](https://user-images.githubusercontent.com/62837444/99184098-005a0d00-2784-11eb-8b3e-ca6fb844a163.png)　　
-
+![localhost_3000_(iPad)](https://user-images.githubusercontent.com/62837444/103653346-c0efb600-4fa7-11eb-9ec2-72afe7494224.png)
 ## :key:制作背景
 女性の一人暮らし、お子さんのお留守番が不安・・・。  
 男性が一緒にいてくれたらいいのに。  
