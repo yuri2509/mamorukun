@@ -56,7 +56,7 @@ http://54.168.35.244
 |nickname|string|presence: true, unique: true|
 |email|string|presence: true, unique: true|
 |password|string|presence: true|
-|encrypted_password|string|presence: true|
+|password_confirmation|string|presence: true|
 
 ### Association
 - has_many :messages
