@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   } 
 
   root "audios#index"
-  resources :delivery_traders
-  resources :strangers
+  resources :delivery_traders, only: [:index]
+  resources :strangers, only: [:index]
   resources :users, only: [:new, :create, :edit, :update]
   resources :messages, only: [:index, :create]
 

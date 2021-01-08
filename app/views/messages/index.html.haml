@@ -6,23 +6,17 @@
     情報交換ページ
   
   .message-page_contents
-    .message-page_contents_info
-      %p.message-page_contents_info_name
-        current_
-      %p.message-page_contents_info_date
-        2021/01/01(Fry)00:00:00
-    %p.message-page_contents_text
-      防犯しましょう！
-  
-  .message-page_contents
-    .message-page_contents_info
-      %p.message-page_contents_info_name
-        testuser2
-      %p.message-page_contents_info_date
-        2021/01/01(Fry)00:10:00
-    %p.message-page_contents_text
-      帰省している方は気をつけてください
-
+    - @messages.each do |message|
+      .message-page_contents_info{data: {message: {id: message.id}}}
+        %p.message-page_contents_info_name
+          = message.user.nickname
+        %p.message-page_contents_info_date
+          = l message.created_at
+      .message-page_contents_lower
+        - if message.content.present?
+          %p.message-page_contents_text
+            = message.content
+          = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
 
   -# ログインしている場合のみ表示
   - if user_signed_in?
@@ -35,5 +29,4 @@
               = icon('fas', 'image', class: 'fa-image')
               = f.file_field :image, class: 'input-form_file'
           = f.submit 'Send', class: 'input-form-btn'
-
 
