@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :delivery_traders, only: [:index]
   resources :strangers, only: [:index]
   resources :users, only: [:new, :create, :edit, :update]
-  resources :messages, only: [:index, :create]
+  resources :messages, only: [:index, :create, :destroy]
 
   # get 'users/show', to: 'users#show'
 
