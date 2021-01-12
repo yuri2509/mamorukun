@@ -12,6 +12,13 @@
           = message.user.nickname
         %p.message-page_contents_info_date
           = l message.created_at
+        %p.message-page_contents_info_trash
+          = link_to "削除", message_path(message)
+          -# = link_to "削除", message, method: :delete, data: { confirm: "投稿を削除しますか？" }
+          -# = link_to "削除", message_path(message), method: :delete, data: { confirm: "投稿を削除しますか？" }
+          -# = link_to message_path(message), method: :delete do
+          -#   = icon('fas', 'trash')
+
       .message-page_contents_lower
         - if message.content.present?
           %p.message-page_contents_text

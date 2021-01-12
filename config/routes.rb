@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :strangers, only: [:index]
   resources :users, only: [:new, :create, :edit, :update]
   resources :messages, only: [:index, :create, :destroy]
+  get 'messages/:id' => 'messages#delete'
 
   # get 'users/show', to: 'users#show'
 
