@@ -16,25 +16,23 @@ class MessagesController < ApplicationController
       redirect_to messages_path, notice: 'メッセージを入力してください。'
     end
   end
-end
 
-def delete
-  byebug
-  @message = Message.find_by(params[:id])
-  @message.destroy
+  def destroy
+    @message = Message.where(id: params[:id]).first
+    if @message.blank?
+      return redirect_to(messages_path, alert: "データが見つかりませんでした") 
+    else
+      @message.destroy
+      redirect_to messages_path
+    end
+    # @message = Message.find(params[:id])
+    # @message.destroy
 
-  redirect_to messages_path
-end
-
-def destroy
-  byebug
-  @message = Message.find_by(params[:id])
-  @message.destroy
-
-  redirect_to messages_path
-end
+    # redirect_to messages_path
+  end
 
 private
   def message_params
     params.require(:message).permit(:content, :image).merge(user_id: current_user.id)
   end
+end
