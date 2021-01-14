@@ -13,8 +13,7 @@
         %p.message-page_contents_info_date
           = l message.created_at
         %p.message-page_contents_info_trash
-          = link_to "削除", message_path(message), method: :delete, data: { confirm: "投稿を削除しますか？" }
-          -#   = icon('fas', 'trash')
+          = link_to icon('fas', 'trash'), message_path(message), method: :delete, data: { confirm: "投稿を削除しますか？" }
 
       .message-page_contents_lower
         - if message.content.present?
