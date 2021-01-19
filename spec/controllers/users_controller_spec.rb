@@ -45,7 +45,7 @@ RSpec.describe "UserAuthentications", type: :request do
     end
   end
 
-  describe 'GET #edit' do
+  describe 'PATCH #update' do
     subject { get edit_user_registration_path }
     context 'ログインしている場合' do
       before do
