@@ -4,7 +4,7 @@ FactoryBot.define do
     # nickname              {"abe"}
     # email                 {"kkk@gmail.com"}
 
-    nickname              {Faker::Name.last_name}
+    nickname              {Faker::Name.name}
     email                 {Faker::Internet.free_email}
     password              {"00000000"}
     encrypted_password    {"00000000"}
