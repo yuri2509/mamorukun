@@ -52,6 +52,53 @@ RSpec.describe "MessagesController", type: :request do
     end
   end
 
+  describe '#create' do
+    let(:params) { { user_id: user.id, message: attributes_for(:message) } }
 
+    context 'ログインしている場合' do
+      before do
+        sign_in user
+        get messages_path
+      end
+
+      # context '保存に成功した場合' do
+        # subject {
+        #   post :create,
+        #   params: params
+        # }
+
+      it '新規投稿できない' do
+        expect(response).to redirect_to messages_path
+      end
+        
+        # it 'messageを保存すること' do
+        #   expect{ subject }.to change(Message, :count).by(1)
+        # end
+
+        # it 'group_messages_pathへリダイレクトすること' do
+        #   subject
+        #   expect(response).to redirect_to(messages_path)
+        # end
+      # end
+
+    #   context '保存に失敗した場合' do
+    #     let(:invalid_params) { { user_id: user.id, message: attributes_for(:message, content: nil, image: nil) } }
+
+    #     subject {
+    #       post :create,
+    #       params: invalid_params
+    #     }
+
+    #     it 'messageを保存しないこと' do
+    #       expect{ subject }.not_to change(Message, :count)
+    #     end
+
+    #     it 'index.html.hamlに遷移すること' do
+    #       subject
+    #       expect(response).to render_template :index
+    #     end
+    #   end
+    end
+  end
 
 end
