@@ -41,8 +41,8 @@ RSpec.describe "MessagesController", type: :request do
         it "@messagesに正しい値が入っていること" do
           messages = create_list(:message, 3) 
           # expect(assigns(:messages)).to eq messages
-          # expect(assigns(:messages)).to match(messages.sort{ |a, b| b.created_at <=> a.created_at } )
-          expect(assigns(:messages).attributes).to eq(blank_message.attributes)
+          expect(assigns(:messages)).to match(messages.sort{ |a, b| b.created_at <=> a.created_at } )
+          # expect(assigns(:messages).attributes).to eq(blank_message.attributes)
         end
 
         it 'メッセージが正しく表示されていること' do
@@ -62,24 +62,24 @@ RSpec.describe "MessagesController", type: :request do
       end
 
       # context '保存に成功した場合' do
-        # subject {
-        #   post :create,
-        #   params: params
-        # }
+      #   subject {
+      #     post :create,
+      #     params: params
+      #   }
 
       it '新規投稿できない' do
         expect(response).to redirect_to messages_path
       end
         
-        # it 'messageを保存すること' do
-        #   expect{ subject }.to change(Message, :count).by(1)
-        # end
+        it 'messageを保存すること' do
+          expect{ subject }.to change(Message, :count).by(1)
+        end
 
-        # it 'group_messages_pathへリダイレクトすること' do
-        #   subject
-        #   expect(response).to redirect_to(messages_path)
-        # end
-      # end
+        it 'group_messages_pathへリダイレクトすること' do
+          subject
+          expect(response).to redirect_to(messages_path)
+        end
+      end
 
     #   context '保存に失敗した場合' do
     #     let(:invalid_params) { { user_id: user.id, message: attributes_for(:message, content: nil, image: nil) } }
@@ -98,7 +98,7 @@ RSpec.describe "MessagesController", type: :request do
     #       expect(response).to render_template :index
     #     end
     #   end
-    end
+    # end
   end
 
 end
