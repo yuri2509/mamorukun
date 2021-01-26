@@ -16,4 +16,11 @@ FactoryBot.define do
     # password_confirmation {password}
   end
 
+  factory :guest, class: User do
+    nickname              {"guest"}
+    email                 {"guest@example.com"}
+    password              {"00000000"}
+    encrypted_password    {"00000000"}
+  end
+
 end
