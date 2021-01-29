@@ -28,5 +28,41 @@ RSpec.describe MessagesController, type: :request do
     end
   end
 
+  describe 'POST #create' do
+    before do
+      sign_in user
+    end
+
+    context 'パラメータが妥当な場合' do
+      it 'リクエストが成功すること' do
+        post messages_url, params: { message: FactoryBot.attributes_for(:message) }
+        expect(response.status).to eq 302
+      end
+
+      it 'メッセージが登録されること' do
+        expect do
+          post messages_url, params: { user: FactoryBot.attributes_for(:message) }
+        end
+      end
+
+      it 'リダイレクトすること' do
+        post messages_url, params: { message: FactoryBot.attributes_for(:message) }
+        expect(response).to redirect_to messages_url
+      end
+    end
+
+    context 'パラメータが不正な場合' do
+      it 'リクエストが成功すること' do
+        post messages_url, params: { message: FactoryBot.attributes_for(:message, content: nil) }
+        expect(response.status).to eq 200
+      end
+
+      it '投稿が保存されないこと' do
+        expect do
+          post messages_url, params: { message: FactoryBot.attributes_for(:message, content: nil) }
+        end
+      end
+    end
+  end
 
 end
