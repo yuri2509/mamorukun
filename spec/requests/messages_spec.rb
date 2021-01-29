@@ -65,4 +65,28 @@ RSpec.describe MessagesController, type: :request do
     end
   end
 
+  describe 'DELETE #destroy' do
+    before do
+      sign_in user
+    end
+
+    let!(:message) { FactoryBot.create :message }
+
+    it 'リクエストが成功すること' do
+      delete message_url message
+      expect(response.status).to eq 302
+    end
+
+    it '投稿が削除されること' do
+      expect do
+        delete message_url message
+      end
+    end
+
+    it 'メッセージ一覧にリダイレクトすること' do
+      delete message_url message
+      expect(response).to redirect_to messages_url
+    end
+  end
+
 end
