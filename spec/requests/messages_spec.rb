@@ -70,8 +70,6 @@ RSpec.describe MessagesController, type: :request do
       sign_in user
     end
 
-    let!(:message) { FactoryBot.create :message }
-
     it 'リクエストが成功すること' do
       delete message_url message
       expect(response.status).to eq 302
