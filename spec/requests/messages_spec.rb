@@ -52,9 +52,9 @@ RSpec.describe MessagesController, type: :request do
     end
 
     context 'パラメータが不正な場合' do
-      it 'リクエストが成功すること' do
+      it 'Bad Requestを返すこと' do
         post messages_url, params: { message: FactoryBot.attributes_for(:message, content: nil) }
-        expect(response.status).to eq 200
+        expect(response.status).to eq 400
       end
 
       it '投稿が保存されないこと' do

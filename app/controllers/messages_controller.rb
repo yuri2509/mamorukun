@@ -14,7 +14,7 @@ class MessagesController < ApplicationController
     if @message.save
       redirect_to messages_path, notice: '投稿しました。'
     else
-      redirect_to messages_path, notice: 'メッセージを入力してください。'
+      redirect_to messages_path, notice: 'メッセージを入力してください。', status: :bad_request
     end
   end
 
