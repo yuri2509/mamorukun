@@ -1,0 +1,104 @@
+.message-page {
+  height: 100%;
+  width: calc(100% - 210px);
+  background-color: #ecbbb5;
+  color: white;
+  padding: 30px 100px;
+  float: right;
+
+  &_title {
+    color: #bee0cc;
+    font-size: 20px;
+    font-weight: bold;
+    @include outline-set;
+    padding: 20px 0;  
+  } 
+
+  &_contents {
+    padding-left: 10px;
+    margin-bottom: 15px;
+
+    &_info {
+      display: flex;
+
+      &_name {
+        font-weight: bold;
+        font-size: 18px;
+        height: 30px;
+      }
+
+      &_date {
+        font-size: 13px;
+        margin-left: 10px;
+      }
+
+      .fa-trash {
+        color: white;
+        font-size: 18px;
+        margin-left: 10px;
+        text-decoration: none;
+      }
+    }
+
+    &_lower {
+      padding-bottom: 15px;
+    }
+  }
+
+  .form {
+    height: 80px;
+    width: calc(100% - 410px);
+    background-color: #bee0cc;
+    position:fixed;
+    bottom: 30px;
+    right: 100px;
+    border-radius: 10px;
+
+    .input-form {
+      display: flex;
+      height: 50px;
+      margin: 15px 5px;
+      padding: 0 10px;
+      
+      .input-form_text {
+        height: 50px;
+        width: calc(100% - 150px);
+        border-style: none;
+        margin-right:10px;
+        padding: 0 10px;
+        justify-content: space-between;
+        border-radius: 10px;
+      }
+
+      .form_mask {
+        .input-form_icon {
+          cursor: pointer;
+          font-size: 1.3rem;
+        
+          .fa-image {
+            font-size: 50px;
+            margin-right:10px;
+          }
+
+          .input-form_file {
+            display: none;
+          }
+
+        }
+      }
+    }
+          
+    .input-form-btn {
+      border-style: none;
+      background-color: #e99bc1;
+      font-size: 20px;
+      color: white;
+      height: 50px;
+      width: 100px;
+      text-align: center;
+      line-height: 50px;
+      cursor: pointer;
+      border-radius: 10px;
+    }
+  }
+}

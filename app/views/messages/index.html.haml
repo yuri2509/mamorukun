@@ -1,0 +1,35 @@
+.wrapper
+  = render "audios/sidebar"
+  
+.message-page
+  .message-page_title
+    情報交換ページ
+  
+  .message-page_contents
+    - @messages.each do |message|
+      .message-page_contents_info{data: {message: {id: message.id}}}
+        %p.message-page_contents_info_name
+          = message.user.nickname
+        %p.message-page_contents_info_date
+          = l message.created_at
+        %p.message-page_contents_info_trash
+          = link_to icon('fas', 'trash'), message_path(message), method: :delete, data: { confirm: "投稿を削除しますか？" }
+
+      .message-page_contents_lower
+        - if message.content.present?
+          %p.message-page_contents_text
+            = message.content
+          = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
+
+  -# ログインしている場合のみ表示
+  - if user_signed_in?
+    .form
+      = form_for [@message] do |f|
+        .input-form
+          = f.text_field :content, class: 'input-form_text', placeholder: '入力してください'
+          .form_mask
+            = f.label :image, class: 'input-form_icon' do
+              = icon('fas', 'image', class: 'fa-image')
+              = f.file_field :image, class: 'input-form_file'
+          = f.submit 'Send', class: 'input-form-btn'
+

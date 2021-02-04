@@ -66,6 +66,7 @@ group :test do
   gem 'chromedriver-helper'
   gem 'rspec-rails'
   gem 'factory_bot_rails'
+  gem 'faker', "~> 2.8"
 end
 
 group :production do
@@ -79,3 +80,5 @@ gem 'haml-rails'
 gem 'devise'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
+gem 'carrierwave'
+gem 'mini_magick'

@@ -30,6 +30,14 @@
   box-sizing: border-box;
 }
 
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
 .side-bar {
   height: 100%;
   width: 210px;
@@ -103,31 +111,7 @@
   padding: 30px 100px;
   float: right;
 
-  &_how-to { 
-    @include toppage-set;
-  }
-
-  &_sumple {
-    @include toppage-set;
-  }
-
-  &_description {
-    @include toppage-set;
-  }
-
-  &_login {
-    @include toppage-set;
-  }
-
-  &_account-edit {
-    @include toppage-set;
-  }
-
-  &_information {
-    @include toppage-set;
-  }
-
-  &_contact {
+  &_how-to, &_sumple, &_description, &_login, &_account-edit, &_information, &_contact { 
     @include toppage-set;
   }
 }

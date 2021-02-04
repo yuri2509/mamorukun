@@ -1,4 +1,7 @@
-.login-page, .forget-password-page, .signup-page, .edit-page {
+.login-page,
+.forget-password-page,
+.signup-page,
+.edit-page {
   height: 100vh;
   width: calc(100% - 210px);
   background-color: #ecbbb5;
@@ -10,9 +13,8 @@
     color: #bee0cc;
     font-size: 20px;
     font-weight: bold;
-    padding: 30px 0;
-    letter-spacing: 3px; 
     @include outline-set;
+    padding: 20px 0;   
   }  
 
   #error_explanation {
