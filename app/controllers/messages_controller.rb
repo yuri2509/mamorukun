@@ -6,29 +6,28 @@ class MessagesController < ApplicationController
     @messages = Message.all.order(created_at: :desc)
   end
 
-  def new
-  end
-
   def create
     @message = Message.new(message_params)
     if @message.save
       redirect_to messages_path, notice: '投稿しました。'
     else
-      redirect_to messages_path, notice: 'メッセージを入力してください。', status: :bad_request
+      @message = Message.new
+      @messages = Message.all.order(created_at: :desc)
+      render :index
     end
   end
 
   def destroy
-    @message = Message.where(id: params[:id]).first
-    if @message.blank?
+    message = Message.where(id: params[:id]).first
+    if message.blank?
       return redirect_to(messages_path, alert: "データが見つかりませんでした") 
     else
-      @message.destroy
+      message.destroy
       redirect_to messages_path
     end
   end
 
-private
+  private
   def message_params
     params.require(:message).permit(:content, :image).merge(user_id: current_user.id)
   end

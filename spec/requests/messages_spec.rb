@@ -5,7 +5,7 @@ RSpec.describe MessagesController, type: :request do
   let(:message) { create(:message) }
   
   describe "GET#index" do
-      context "投稿一覧ページが正しく表示されること" do
+    context "投稿一覧ページが正しく表示されること" do
       it "200レスポンスが返ってきていること" do
         get messages_url
         expect(response.status).to eq 200
@@ -13,14 +13,14 @@ RSpec.describe MessagesController, type: :request do
     end
 
     context '未ログインの状態で' do
-      it 'アクセスできる' do
+      it 'アクセスできること' do
         get messages_url
         expect(response).to be_successful
       end
     end
 
     context 'ログインユーザーとして' do
-      it 'アクセスできる' do
+      it 'アクセスできること' do
         sign_in user
         get messages_url
         expect(response).to be_successful
@@ -52,15 +52,15 @@ RSpec.describe MessagesController, type: :request do
     end
 
     context 'パラメータが不正な場合' do
-      it 'Bad Requestを返すこと' do
+      it '200レスポンスを返すこと' do
         post messages_url, params: { message: FactoryBot.attributes_for(:message, content: nil) }
-        expect(response.status).to eq 400
+        expect(response.status).to eq 200
       end
 
       it '投稿が保存されないこと' do
         expect do
           post messages_url, params: { message: FactoryBot.attributes_for(:message, content: nil) }
-        end
+        end.to change { Message.count }.by(0)
       end
     end
   end
@@ -68,7 +68,10 @@ RSpec.describe MessagesController, type: :request do
   describe 'DELETE #destroy' do
     before do
       sign_in user
+      post messages_url, params: { message: FactoryBot.attributes_for(:message) }
     end
+
+    let(:message) {Message.first}
 
     it 'リクエストが成功すること' do
       delete message_url message
@@ -78,7 +81,15 @@ RSpec.describe MessagesController, type: :request do
     it '投稿が削除されること' do
       expect do
         delete message_url message
-      end
+      end.to change { Message.count }.by(-1)
+    end
+
+    it '他のユーザーでは削除できないこと' do
+      other_user = create(:user)
+      sign_in other_user
+      expect do
+        delete message_url message
+      end.to change { Message.count }.by(0)
     end
 
     it 'メッセージ一覧にリダイレクトすること' do
