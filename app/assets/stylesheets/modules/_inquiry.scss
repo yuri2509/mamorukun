@@ -1,0 +1,16 @@
+.inquiry-page {
+  height: 100%;
+  width: calc(100% - 210px);
+  background-color: #ecbbb5;
+  color: white;
+  padding: 30px 100px;
+  float: right;
+
+  &_title {
+    color: #bee0cc;
+    font-size: 20px;
+    font-weight: bold;
+    @include outline-set;
+    padding: 20px 0;  
+  } 
+}
