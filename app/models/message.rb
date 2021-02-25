@@ -4,5 +4,6 @@ class Message < ApplicationRecord
   # imageカラムが空の場合、contentカラムも空であれば保存しない
   validates :content, presence: true
 
-  mount_uploader :image, ImageUploader
+  # mount_uploader :image, ImageUploader
+  mount_uploader :image, AvatarUploader
 end
