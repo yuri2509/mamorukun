@@ -32,7 +32,6 @@ class MessagesController < ApplicationController
     params.require(:message).permit(:content, :image).merge(user_id: current_user.id)
   end
 
-
   def message_destroy_user
     unless Message.find(params[:id]).user.id.to_i == current_user.id
       redirect_to messages_path, notice: '投稿ユーザーではないので削除できません。'

@@ -5,5 +5,5 @@ class Message < ApplicationRecord
   validates :content, presence: true
 
   # mount_uploader :image, ImageUploader
-  mount_uploader :image, AvatarUploader
+  mount_uploader :image, ImageUploader
 end
