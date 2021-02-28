@@ -8,7 +8,7 @@ http://54.168.35.244
 
 ## :computer:開発環境
 - Rails 5.2.4.4　　
-- ruby 2.7.2　　
+- ruby 2.5.1
 - Haml　　
 - SCSS　　
 - capistrano 3.14.1　　
